@@ -4,7 +4,11 @@ This repository is currently being updated and will contain the code and data us
 
 ## Depedencies
 
-## Model Generation using Knowledge Artifacts
+### Data
+
+### Model
+
+## Generating using Knowledge Artifacts
 
 
 ## Evaluation
