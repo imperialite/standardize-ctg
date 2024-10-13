@@ -50,10 +50,18 @@ Note: Some parts of the code may mention the word `Specgem`, this is the old nam
 ## Evaluation
 
 
-### Paper Citation
+## Paper Citation
+If you use any resource from this repository, please cite the `Standardize` paper as referenced below:
 
-
-### Data Citation
-
-
-> Written with [StackEdit](https://stackedit.io/).
+```
+@inproceedings{imperial-etal-2024-standardize,
+title = "Standardize: {A}ligning {L}anguage {M}odels with {E}xpert-{D}efined {S}tandards for {C}ontent {G}eneration",
+author = "Imperial, Joseph Marvin and Forey, Gail and Tayyar Madabushi, Harish",
+editor = "Al-Onaizan, Yaser and Bansal, Mohit and Chen, Yun-Nung",
+booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+month = nov,
+year = "2024",
+address = "Miami, Florida",
+publisher = "Association for Computational Linguistics"
+}
+```
