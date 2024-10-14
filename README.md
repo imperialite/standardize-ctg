@@ -16,7 +16,7 @@ The paper makes use of the following existing datasets which can be found in the
 
 	> Breuker, M. (2022). CEFR Labelling and Assessment Services. In European Language Grid: A Language Technology Platform for Multilingual Europe (pp. 277-282). Cham: Springer International Publishing.
 
-- Cambridge Exams -  CEFR-labelled exam narratives used as gold-standard reference where linguistic features are extracted for the `Standardize` framework, particularly with through `Standardize-L`. The dataset can be downloaded [here](https://ilexir.co.uk/datasets/index.html). To get the linguistic features, use [LFTK](https://github.com/brucewlee/lftk). Unfortunately, we cannot redistribute any derived copy of the dataset due to license restrictions but extracting the features through LFTK is easy enough. Citation found below.
+- Cambridge Exams -  CEFR-labelled exam narratives used as gold-standard reference where linguistic features are extracted for the `Standardize` framework, particularly with through `Standardize-L`. The raw text dataset can be downloaded [here](https://ilexir.co.uk/datasets/index.html). To get the linguistic features, use [LFTK](https://github.com/brucewlee/lftk). Citation found below.
 
 	> Menglin Xia, Ekaterina Kochmar, and Ted Briscoe. 2016. [Text Readability Assessment for Second Language Learners](https://aclanthology.org/W16-0502). In _Proceedings of the 11th Workshop on Innovative Use of NLP for Building Educational Applications_, pages 12–22, San Diego, CA. Association for Computational Linguistics.
 
@@ -26,7 +26,7 @@ The paper makes use of the following existing datasets which can be found in the
 
 	> Davies, Mark. "The 385+ million word Corpus of Contemporary American English (1990–2008+): Design, architecture, and linguistic insights." International journal of corpus linguistics 14.2 (2009): 159-190.
 
-- CCS Exemplars - CCS-labelled stories used as gold-standard reference where linguistic features are extracted for the `Standardize` framework, particularly with through `Standardize-L`. To get the data, please contact the authors from the citation below. Unfortunately, we cannot redistribute any derived copy of the dataset due to license restrictions. Same with Cambridge Exams, extracting the features through LFTK is easy. 
+- CCS Exemplars - CCS-labelled stories used as gold-standard reference where linguistic features are extracted for the `Standardize` framework, particularly with through `Standardize-L`. To get the raw text data, please contact the authors from the citation below. Same with Cambridge Exams, extracting the features through LFTK is easy. 
 
 	> Michael Flor, Beata Beigman Klebanov, and Kathleen M. Sheehan. 2013. [Lexical Tightness and Text Complexity](https://aclanthology.org/W13-1504). In _Proceedings of the Workshop on Natural Language Processing for Improving Textual Accessibility_, pages 29–38, Atlanta, Georgia. Association for Computational Linguistics.
 
