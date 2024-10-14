@@ -107,7 +107,22 @@ The `icralm_type` identifies what **knowledge artifact** you want to use with re
 
 You can easily switch from using CEFR to CCS data and choose whichever model from HF you want to use. Most of the models are captured by the AutoTokenizer and AutoModelForCausalLM in `model_utils.py`. If not, just add the specific Auto model reader.
 
+
 ## Evaluation
+
+The eval folder contains `eval_script.ipynb` which is a Python notebook that contains both automatic model-based and fluency/diversity evaluation as described in Section 6.3.
+
+#### Model-Based Evaluation (Precise and Adjacent Accuracies)
+
+For model-based evaluation, you need the `cambridge_features.csv` for CEFR and `commoncore_10_features_bin_with_sbert.csv` for CCS. These files contain the extracted linguistics features to train model-based classifiers Random Forest XGBoost for CEFR and CCS respectively as described in Section 6.3. You will also need to provide `elg_data.csv` or `coca_data.csv` which are both present in repo as well as a csv file for `generation_file_name` containing the model generations you want to evaluate. 
+
+For precise accuracy, the script will output a `classification_report` as a result based on model-classifier's prediction which you can get the values.
+
+For adjacent accuracy, the code after the classification report performs this. Note that adjacent accuracy should only be used for CEFR and not CCS as this requires ordinal data.
+
+#### Fluency and Diversity
+
+For evaluating fluency and diversity, `frugalscore` and `distinct-n` is used. The formula for `distinct-n` is already in the script and make sure that the `frugalscore.py`  is in the same folder as the `eval_script`.
 
 
 ## Paper Citation
