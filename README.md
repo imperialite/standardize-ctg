@@ -105,6 +105,7 @@ The `icralm_type` identifies what **knowledge artifact** you want to use with re
 
 	    python script.py --dataset_path "CEFR/elg_data.csv" --model_api_url "gpt" --method "specgem-openai" --file_output_name "elg_gpt4_standardize.csv" --auth_token AUTH_TOKEN --max_length 300 --knowledge_base_path "CEFR/cefr_specs_finegrained.csv" --spec "cefr" --classifier_features_path "CEFR/cambridge_all_features.csv" --icralm_type "all"
 
+You can easily switch from using CEFR to CCS data and choose whichever model from HF you want to use. Most of the models are captured by the AutoTokenizer and AutoModelForCausalLM in `model_utils.py`. If not, just add the specific Auto model reader.
 
 ## Evaluation
 
@@ -114,13 +115,13 @@ If you use any resource from this repository, please cite the `Standardize` pape
 
 ```
 @inproceedings{imperial-etal-2024-standardize,
-title = "Standardize: {A}ligning {L}anguage {M}odels with {E}xpert-{D}efined {S}tandards for {C}ontent {G}eneration",
-author = "Imperial, Joseph Marvin and Forey, Gail and Tayyar Madabushi, Harish",
-editor = "Al-Onaizan, Yaser and Bansal, Mohit and Chen, Yun-Nung",
-booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
-month = nov,
-year = "2024",
-address = "Miami, Florida",
-publisher = "Association for Computational Linguistics"
+	title = "Standardize: {A}ligning {L}anguage {M}odels with {E}xpert-{D}efined {S}tandards for {C}ontent {G}eneration",
+	author = "Imperial, Joseph Marvin and Forey, Gail and Tayyar Madabushi, Harish",
+	editor = "Al-Onaizan, Yaser and Bansal, Mohit and Chen, Yun-Nung",
+	booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+	month = nov,
+	year = "2024",
+	address = "Miami, Florida",
+	publisher = "Association for Computational Linguistics"
 }
 ```
