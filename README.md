@@ -45,7 +45,66 @@ The paper makes use of four models listed below. Please make sure to cite the
 
 ## Generating using Knowledge Artifacts
 
-Note: Some parts of the code may mention the word `Specgem`, this is the old name of the framework before we changed to `Standardize`.
+For all Hugginface models (Llama2-chat, Longform, OpenChat), you need to create a Hugginface account first and request access to these models and use your own user access token for the code.
+
+Some parts of the code may mention the word `Specgem`, this is the old name of the framework before we changed to `Standardize`.
+
+#### Config
+The code makes use of the following arguments and their definitions:
+
+ - `spec` choose either 'cefr' or 'ccs'
+ - `dataset_path` provide path of prompt data as input
+ - `file_output_name` provide any desired filename of output in csv
+ - `knowledge_base_path` provide specifications from either CEFR or CCS, can be found in their respective files
+ - `classifier_features_path` provide linguistic features from gold-standard CEFR or CCS data
+ - `model_api_url` provide Hugginface-style link of model (ex. "meta-llama/Llama-2-7b-chat-hf")
+ - `max_length` or `min_length` provide target min and max length of generated content, defaults to 300 and 30
+ - `top_p` provide nucleus sampling value, defaults to 0.95
+ - `auth_token` provide your Huggingface read and write access key
+ - `method` see below
+ - `icralm_type` see below
+
+#### Hugginface or OpenAI Setup Selection (`method`)
+
+The `method` argument is dependent on the the type of model you want to use whether it comes from Hugginface of OpenAI. It can have the following values:
+
+ - `simple-prompt-hf` use this for the teacher-style method of prompting using HF models
+ - `simple-prompt-openai` same as above but using OpenAI models
+ - `ic-ralm-hf` use this for Standardize-A and E using HF models
+ - `ic-ralm-openai` same as above but using Open AI models
+ - `specgem-hf` use this for Standardize-L and ★ (all artifacts) using HF models
+ - `specgem-openai` same as above but OpenAU models
+
+#### Knowledge Artifacts Setup Selection (`icralm_type`)
+
+The `icralm_type` identifies what **knowledge artifact** you want to use with respect to the Standardize framework. See Section 5 of the paper.
+
+ - `standard` used for Standardize-A or aspect-based knowledge artifact
+ - `exemplar` used for Standardize-E or exemplar-based knowledge artifact
+ - `all` combine `standard` and `exemplar` artifacts, use this argument if you want to use Standardize-L or ★
+
+#### Examples
+
+1. Generate using teacher-style prompting, CCS data, and Llama2 model
+
+	    python script.py --dataset_path "CCS/coca_data.csv" --model_api_url "meta-llama/Llama-2-7b-chat-hf" --method "simple-prompt-hf" --file_output_name "coca_llama_7b_simpleprompt.csv" --auth_token AUTH_TOKEN --max_length 300 --knowledge_base_path "CCS/ccs_specs_finegrained.csv" --spec "ccs"
+
+2. Generate using Standardize-A (aspect knowledge artifact), CEFR data, and Llama2 model
+
+		python script.py --dataset_path "cefr/elg_data.csv" --model_api_url "meta-llama/Llama-2-7b-chat-hf" --method "ic-ralm-hf" --file_output_name "elg_llama2_aspect.csv" --auth_token AUTH_TOKEN --max_length 300 --knowledge_base_path "cefr/cefr_specs.csv" --spec "cefr" --classifier_features_path "cefr/cambridge_all_features.csv" --icralm_type "standard"
+
+3. Generate using Standardize-E (aspect knowledge artifact), CEFR data, and Llama2 model
+
+		python script.py --dataset_path "cefr/elg_data.csv" --model_api_url "meta-llama/Llama-2-7b-chat-hf" --method "ic-ralm-hf" --file_output_name "elg_llama2_exemplar.csv" --auth_token AUTH_TOKEN --max_length 300 --knowledge_base_path "cefr/cefr_specs.csv" --spec "cefr" --classifier_features_path "cefr/cambridge_all_features.csv" --icralm_type "exemplar"
+
+4. Generate using Standardize-★ (all knowledge artifacts), CEFR data, and Llama2 model
+
+	    python script.py --dataset_path "cefr/elg_data.csv" --model_api_url "meta-llama/Llama-2-7b-chat-hf" --method "specgem-hf" --file_output_name "elg_llama2_standardize.csv" --auth_token AUTH_TOKEN --max_length 300 --knowledge_base_path "cefr/cefr_specs.csv" --spec "cefr" --classifier_features_path "cefr/cambridge_all_features.csv" --icralm_type "all"
+
+5. Generate using Standardize-★ (all knowledge artifacts), CEFR data, and GPT-4
+
+	    python script.py --dataset_path "CEFR/elg_data.csv" --model_api_url "gpt" --method "specgem-openai" --file_output_name "elg_gpt4_standardize.csv" --auth_token AUTH_TOKEN --max_length 300 --knowledge_base_path "CEFR/cefr_specs_finegrained.csv" --spec "cefr" --classifier_features_path "CEFR/cambridge_all_features.csv" --icralm_type "all"
+
 
 ## Evaluation
 
