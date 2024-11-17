@@ -1,7 +1,5 @@
 # Standardize: Aligning Language Models with Expert-Defined Standards for Content Generation
 
-This repository is being updated.
-
 This repository contains the code and data used for the paper [Standardize: Aligning Language Models with Expert-Defined Standards for Content Generation](https://arxiv.org/abs/2402.12593) by Joseph Imperial, Gail Forey, and Harish Tayyar Madabushi accepted to **EMNLP 2024 (Main).**
 
 ## Depedencies
